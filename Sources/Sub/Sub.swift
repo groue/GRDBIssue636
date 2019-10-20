@@ -18,14 +18,14 @@ private class SubEncoder<T: SubEncodable>: Encoder {
     init() { }
     
     func container<Key>(keyedBy type: Key.Type) -> KeyedEncodingContainer<Key> where Key : CodingKey {
-        fatalError("not implemented")
+        fatalError("never called")
     }
     
     func unkeyedContainer() -> UnkeyedEncodingContainer {
-        fatalError("not implemented")
+        fatalError("never called")
     }
     
     func singleValueContainer() -> SingleValueEncodingContainer {
-        fatalError("not implemented")
+        fatalError("never called")
     }
 }
