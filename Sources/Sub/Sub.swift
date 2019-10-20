@@ -12,8 +12,8 @@ extension SubEncodable where Self: Encodable {
 }
 
 private class SubEncoder<T: SubEncodable>: Encoder {
-    var codingPath: [CodingKey] = []
-    var userInfo: [CodingUserInfoKey: Any] = [:]
+    var codingPath: [CodingKey] { [] }
+    var userInfo: [CodingUserInfoKey: Any] { [:] }
     
     func container<Key>(keyedBy type: Key.Type) -> KeyedEncodingContainer<Key> where Key : CodingKey {
         fatalError("not implemented")
