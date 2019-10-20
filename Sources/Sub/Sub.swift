@@ -1,11 +1,11 @@
 import Foundation
 
 public protocol SubEncodable {
-    func encode()
+    func subEncode()
 }
 
 extension SubEncodable where Self: Encodable {
-    public func encode() {
+    public func subEncode() {
         let encoder = SubEncoder<Self>()
         try! self.encode(to: encoder)
     }
