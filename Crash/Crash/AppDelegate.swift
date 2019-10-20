@@ -1,7 +1,7 @@
 import UIKit
 import Sub
 
-struct Foo: Codable { }
+struct Foo: Encodable { }
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
