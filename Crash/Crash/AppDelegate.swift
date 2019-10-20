@@ -2,7 +2,6 @@ import UIKit
 import Sub
 
 struct Foo: Codable { }
-extension Foo: SubEncodable { }
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,4 +14,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-

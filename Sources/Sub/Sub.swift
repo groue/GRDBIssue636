@@ -1,17 +1,13 @@
 import Foundation
 
-public protocol SubEncodable {
-    func subEncode()
-}
-
-extension SubEncodable where Self: Encodable {
+extension Encodable {
     public func subEncode() {
         let encoder = SubEncoder<Self>()
         try! self.encode(to: encoder)
     }
 }
 
-private class SubEncoder<T: SubEncodable>: Encoder {
+private class SubEncoder<T: Encodable>: Encoder {
     var codingPath: [CodingKey] { [] }
     var userInfo: [CodingUserInfoKey: Any] { [:] }
     
