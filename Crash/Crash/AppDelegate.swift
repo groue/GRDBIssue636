@@ -2,7 +2,7 @@ import UIKit
 import Sub
 
 struct Foo: Codable { }
-extension Foo: FooEncodable { }
+extension Foo: SubEncodable { }
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
