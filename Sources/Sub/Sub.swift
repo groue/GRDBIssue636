@@ -1,27 +1,21 @@
 import Foundation
 
-public struct Container {
-    public init() { }
-}
-
 public protocol FooEncodable {
-    func encode(to container: inout Container)
+    func encode()
 }
 
 extension FooEncodable where Self: Encodable {
-    public func encode(to container: inout Container) {
-        let encoder = FooEncoder<Self>(container: container)
+    public func encode() {
+        let encoder = FooEncoder<Self>()
         try! self.encode(to: encoder)
     }
 }
 
 private class FooEncoder<T: FooEncodable>: Encoder {
-    private var container: Container
     var codingPath: [CodingKey] = []
     var userInfo: [CodingUserInfoKey: Any] = [:]
     
-    init(container: Container) {
-        self.container = container
+    init() {
     }
     
     func container<Key>(keyedBy type: Key.Type) -> KeyedEncodingContainer<Key> where Key : CodingKey {

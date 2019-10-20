@@ -8,8 +8,7 @@ extension Foo: FooEncodable { }
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let foo = Foo()
-        var container = Container()
-        foo.encode(to: &container)
+        foo.encode()
         
         // Override point for customization after application launch.
         return true
