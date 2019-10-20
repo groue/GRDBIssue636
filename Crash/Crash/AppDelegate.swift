@@ -1,18 +1,7 @@
 import UIKit
 import Sub
 
-struct Foo: Codable, Identifiable {
-    var id: UUID
-    var createdAt: Date
-    var lastModified: Date
-    
-    init() {
-        self.id = UUID()
-        self.createdAt = Date()
-        self.lastModified = self.createdAt
-    }
-}
-
+struct Foo: Codable { }
 extension Foo: FooEncodable { }
 
 @UIApplicationMain
